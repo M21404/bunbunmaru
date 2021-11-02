@@ -27,17 +27,20 @@ def writeToFile(content, filename):
     if not os.path.exists(filename):
         with open(filename, 'w') as f:
             f.write(content)
+        return 0
     else:
         print(f"{filename} already exists")
+        return 1
 
 
 def main(file, url):
-    writeToFile(url2string(url), file)
+    return writeToFile(url2string(url), file)
 
 
 if __name__ == '__main__':
     # Example:
     # > py bbm.py sample.md https://www.newyorker.com/books/page-turner/thoreau-in-love
     file, url = sys.argv[1], sys.argv[2]
-    main(file, url)
-    print(f'Successfully wrote {url} to {file}')
+    exit_code = main(file, url)
+    if exit_code == 0:
+        print(f'Successfully wrote {url} to {file}')
