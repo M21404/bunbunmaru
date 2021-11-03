@@ -38,6 +38,6 @@ pyinstaller bbm.py
 
 ## TODO
 
-- [] Image support
-- [] OSX Support
-- [] Check support for major news sites
+- [ ] Image support
+- [ ] OSX Support
+- [ ] Check support for major news sites
